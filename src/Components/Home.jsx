@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Moment from 'moment'
 
 import '../CSS/Home.css'
-
+import TweetEmbed from 'react-tweet-embed'
 
 import insta from '../Assets/insta.svg'
 import facebook from '../Assets/facebook.svg'
@@ -19,6 +19,7 @@ import meter from '../Assets/meter.svg'
 import coffee from '../Assets/coffeecup.svg'
 import playlist from '../Assets/playlist.png'
 import ocean from '../Assets/ocean.svg'
+import step from '../Assets/step.png'
 
 
 
@@ -33,6 +34,7 @@ const Home = () => {
   const img2 = 'https://picsum.photos/id/118/info'
   const img3 = 'https://picsum.photos/id/119/info'
   const img4 = 'https://picsum.photos/id/12/info'
+
 
 
   const [detail, setdetail] = useState(null)
@@ -67,6 +69,8 @@ const Home = () => {
   let img3content = null
   let img4content = null
 
+
+  // HEADER
   useEffect(() => {
     axios.get(detailurl)
       .then (response => {
@@ -83,6 +87,8 @@ const Home = () => {
     headerdetailcontent = <p>{headerdetail.author}</p>
   }
 
+
+  // IMAGES
   useEffect(() => {
     axios.get(img1)
     .then (response => {
@@ -127,6 +133,7 @@ const Home = () => {
   if (imgFour) {
     img4content = <h4>{imgFour.author}</h4>
   }
+
 
 // End API config
 
@@ -350,10 +357,12 @@ const Home = () => {
 
           {/* festival */}
           <div className="ocean">
-            <img src={ocean} alt="" />
+            <div className="oceanImg">
+              <img src={ocean} alt="" />
+            </div>
             <h1>Ocean Film Festival - London</h1>
             <p className="date">{formatDate}</p>
-            <p>Dive into a night of mesmerising ocean adventure! The Ocean Film Festival World Tour is back for 2021 with a brand-new collection of the world’s most incredible ocean films!<br/>Brought to you by the team behind the Banff Mountain Film... <b>Read More</b></p>
+            <p className='word'>Dive into a night of mesmerising ocean adventure! The Ocean Film Festival World Tour is back for 2021 with a brand-new collection of the world’s most incredible ocean films!<br/>Brought to you by the team behind the Banff Mountain Film... <b>Read More</b></p>
             <button>Register with $10</button>
             <div className="bottomImageCard">
                 <div className="card">
@@ -370,61 +379,63 @@ const Home = () => {
 
           {/* 1001  */}
           <div className="step">
-            <div className="top">
-              <img src="" alt="" />
+            <div className="topStep">
+              <img src={step} alt="" />
               <div className="side">
-                <h1>Summer playlist</h1>
-                <p></p>
+                <h1>1001 Step-by-Step Doodle Workbook</h1>
+                <p>Dive into a night of mesmerising ocean adventure! The Ocean Film Festival World Tour is back for 2021 with a brand-new collection of the world’s most incredible ocean films!<br/>Brought to you by the team behind the Banff Mountain Film... <b>Read More</b></p>
               </div>
             </div>
-            <button>Buy $10</button>
+            <button>Buy $20</button>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
 
           {/* twitter */}
           <div className="twitter">
-            <img src="" alt="" />
+            <div className="tweet">
+              <TweetEmbed tweetId='771763270273294336' placeholder={'loading'} />
+            </div>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
 
           {/* Mail */}
           <div className="mail">
             <h1>Join my mailing list</h1>
-            <p></p>
-            <input type="text" name="" id="" />
-            <input type="email" name="" id="" />
+            <p>Subscribe today to receive my latest updates available only to my subscribers.</p>
+            <input type="text" name="" id="" placeholder='Your Firstname'/>
+            <input type="email" name="" id="" placeholder='Your email' />
             <button>Subscribe</button>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
         </div> 
     </div>

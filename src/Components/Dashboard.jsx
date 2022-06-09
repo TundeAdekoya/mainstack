@@ -53,7 +53,7 @@ const Dashboard = () => {
         <div id="menu">
             <div id="topSection">
                 <img className="goto" src={logo} alt="" />
-                <div onClick={homeLink} className="goto cursor top"><img className="goto" src={dashboard} alt="" /> Dashboard</div>
+                <div onClick={homeLink} className="goto cursor menutop"><img className="goto" src={dashboard} alt="" /> Dashboard</div>
                 <div onClick={editorLink} className="goto cursor "><img className="goto" src={editor} alt="" /> Editor</div>
                 <div onClick={accountSettingLink} className="goto cursor"><img className="goto" src={profile} alt="" /> Account</div>
             </div>

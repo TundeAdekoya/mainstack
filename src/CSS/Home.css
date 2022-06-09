@@ -256,7 +256,7 @@
     margin-top: 20px;
 }
 
-.videocard h2, .support h2, .study h2, .coffee h2, .consulation h1, .playlist h1{
+.videocard h2, .support h2, .study h2, .coffee h2, .consulation h1, .playlist h1, .mail h1{
     font-size: 16px;
     margin: 30px 0px 20px 30px;
 }
@@ -312,16 +312,17 @@
     line-height: 22px;
 }
 
-.support b, .study b{
+.support b, .study b, .mail p{
     font-size: 14px;
     color: #000;
 }
 
 .support button{
     margin: 0 20px 0 20px ;
-    padding: 20px 5%;
+    height: 50px;
+    padding: 15px 20px;
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     background-image: linear-gradient(#eb3348cc, #F45C43);
     color: #fff;
@@ -429,14 +430,16 @@
 
 .coffee .coffeebtn{
     margin: 10px 20px 0 20px ;
-    padding: 20px 20px;
+    height: 50px;
+    padding: 15px 20px;
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     background-image: linear-gradient(#eb3348cc, #F45C43);
     color: #fff;
     cursor: pointer;
 }
+
 
 .input{
     border: 1px solid rgb(218, 218, 218);
@@ -446,7 +449,7 @@
 }
 
 .coffee .bottomImageCard{
-    margin: 10%;
+    margin: 12%;
 }
 
 
@@ -463,9 +466,10 @@
 
 .consulation button{
     margin: 20px 20px 0 20px ;
-    padding: 20px 20px;
+    height: 50px;
+    padding: 15px 20px;
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     background-image: linear-gradient(#eb3348cc, #F45C43);
     color: #fff;
@@ -503,6 +507,160 @@
     width: 90%;
 }
 
-.playlist .bottomImageCard{
+.playlist .bottomImageCard, .ocean .bottomImageCard, .step .bottomImageCard{
     margin: 4%;
+}
+
+.ocean{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed rgb(218, 218, 218);
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    border-radius: 20px;
+    width: 500px;
+    height: 650px;
+    margin-top: 20px;
+}
+
+.oceanImg{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.oceanImg img{
+    width: 95%;
+}
+
+.ocean h1{
+    font-size: 16px;
+    margin: 5px 0px 10px 30px;
+}
+
+.ocean .date{
+    font-size: 12px;
+    color: #027BAF;
+    margin: 0px 30px;
+}
+
+.ocean .word{
+    font-size: 14px;
+    margin: 20px 30px;
+    line-height: 20px;
+}
+
+.ocean button, .step button{
+    margin: 0px 20px 0 20px ;
+    height: 50px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(#eb3348cc, #F45C43);
+    color: #fff;
+    cursor: pointer;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed rgb(218, 218, 218);
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    border-radius: 20px;
+    width: 500px;
+    height: 420px;
+    margin-top: 20px;
+
+}
+
+.topStep{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.topStep img{
+    width: 90%;
+    margin: auto;
+}
+
+.side h1{
+    font-size: 16px;
+    margin: 20px 0 20px 0;
+}
+
+.side p{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.twitter{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed rgb(218, 218, 218);
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    border-radius: 20px;
+    width: 500px;
+    height: 420px;
+    margin-top: 20px;
+}
+
+.tweet{
+    margin: 20px 20px 0 20px ;
+}
+
+
+#twitter-widget-1{
+    display: none !important;
+
+}
+
+.twitter .bottomImageCard{
+    margin-top: 0%;
+    z-index: -1;
+}
+
+/* mail */
+
+.mail{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed rgb(218, 218, 218);
+    box-shadow: 0 0 10px rgb(230, 230, 230);
+    border-radius: 20px;
+    width: 500px;
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.mail p{
+    margin: 0 30px 0 30px;
+}
+
+.mail input{
+    padding: 15px;
+    margin: 20px 30px 0px 30px;
+    border-radius: 10px;
+    background-color: #E1E4EB;
+    border: none;
+    outline: none;
+}
+
+.mail button{
+    margin: 20px 30px 0 30px ;
+    height: 50px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #C91C5A;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mail .bottomImageCard{
+    margin: 5%;
 }
