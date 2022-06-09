@@ -1,17 +1,26 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Moment from 'moment'
+
 import '../CSS/Home.css'
+
+
 import insta from '../Assets/insta.svg'
 import facebook from '../Assets/facebook.svg'
 import snapchat from '../Assets/Snapchat.svg'
 import whatsapp from '../Assets/whatsapp.svg'
 import theme from '../Assets/changeTheme.svg'
-import add from '../Assets/add.svg'
 import move from '../Assets/move.svg'
+import added from '../Assets/add.svg'
 import del from '../Assets/delete.svg'
 import edit from '../Assets/edit.svg'
 import Dolphin from '../Assets/Dolphin.svg'
 import meter from '../Assets/meter.svg'
+import coffee from '../Assets/coffeecup.svg'
+import playlist from '../Assets/playlist.png'
+import ocean from '../Assets/ocean.svg'
+
+
 
 
 
@@ -32,7 +41,23 @@ const Home = () => {
   const  [imgTwo, setimageTwo] = useState(null)
   const  [imgThree, setimageThree] = useState(null)
   const  [imgFour, setimageFour] = useState(null)
+  const [buycoffee, setBuycoffee] = useState(0)
 
+  const formatDate = Moment().format('llll')
+
+  const add = () => {
+      setBuycoffee(buycoffee + 1)
+  }
+  const reduce = () => {
+    let value = 0
+    if (buycoffee  <= value) {
+      value = 1
+    } else{
+        value = buycoffee 
+    }
+
+    setBuycoffee(value - 1)
+  }
 
 
   let detailcontent = null 
@@ -177,7 +202,7 @@ const Home = () => {
 
                 <div className="btn">
                   <button><img src={theme} alt="" />Change theme</button>
-                  <button><img src={add} alt="" />Add element</button>
+                  <button><img src={added} alt="" />Add element</button>
                 </div>
             </div>
             <div className="bottomImageCard">
@@ -257,29 +282,31 @@ const Home = () => {
           <div className="coffee">
             <h2>Buy me a coffee</h2>
             <p className='grey'>200 coffees received from 120 supportes</p>
-            <p></p>
+            <p className='black'>I'm the guy from Freebird on YouTube. I quit architecture for woodworking (mostly fitted furniture) and now I'm teaching you what I've learned. <br/>Along the way I've moved from the garage workshop where ...<b>Read More</b></p>
             <div className="minicard">
               <div className="top">
                 <div className="top1">
-                  <img src="" alt="" />
+                  <img src={coffee} alt="" />
                   <p>$10 each</p>
                 </div>
                 <div className="top2">
-                  {/* input */}
+                  <button onClick={() => reduce()} ><i class="fa fa-minus" aria-hidden="true"></i></button>
+                  <div className="input">{buycoffee}</div>
+                  <button onClick={() => add()}><i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
-                <button>Buy $10 coffee</button>
               </div>
+              <button className='coffeebtn'>Buy $10 coffee</button>
               <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
             </div>
           </div>
 
@@ -287,60 +314,62 @@ const Home = () => {
 
           <div className="consulation">
             <h1>Consultation session with me</h1>
-            <p></p>
+            <p className='black'>I'm the guy from Freebird on YouTube. I quit architecture for woodworking (mostly fitted furniture) and now I'm teaching you what I've learned. <br/>Along the way I've moved from the garage workshop where ...<b>Read More</b></p>
             <button>Start $10 Consultation</button>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
 
           {/* playlist */}
           <div className="playlist">
             <h1>Summer playlist</h1>
-            <img src="" alt="" />
+            <div className="playlistImage">
+              <img src={playlist} alt="" />
+            </div>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
 
           {/* festival */}
-          <div className="playlist">
-            <img src="" alt="" />
+          <div className="ocean">
+            <img src={ocean} alt="" />
             <h1>Ocean Film Festival - London</h1>
-            <p className="date"></p>
-            <p></p>
+            <p className="date">{formatDate}</p>
+            <p>Dive into a night of mesmerising ocean adventure! The Ocean Film Festival World Tour is back for 2021 with a brand-new collection of the world’s most incredible ocean films!<br/>Brought to you by the team behind the Banff Mountain Film... <b>Read More</b></p>
             <button>Register with $10</button>
             <div className="bottomImageCard">
-                <div className="move">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={move} alt="" />
                 </div>
-                <div className="delete">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={del} alt="" />
                 </div>
-                <div className="edit">
-                  <img src="" alt="" />
+                <div className="card">
+                  <img src={edit} alt="" />
                 </div>
-              </div>
+            </div>
           </div>
 
           {/* 1001  */}
-          <div className="playlist">
+          <div className="step">
             <div className="top">
               <img src="" alt="" />
               <div className="side">

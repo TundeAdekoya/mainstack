@@ -47,17 +47,6 @@ const Dashboard = () => {
         detailcontent = <p>{detail.author}</p>
     }
 
-    // useEffect(() => {
-    //     axios.get(detailurl)
-    //         .then(response => {
-    //             setImage(response.data)
-    //     })
-    // }, [detailurl])
-
-    // if (image){
-    //     imageContent = <img src={detail.download_url} alt="" />
-    // }
-
 
   return (
     <div id='dashboard'>
