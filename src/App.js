@@ -1,3 +1,4 @@
+import React from 'react';
 import Dashboard from './Components/Dashboard'
 // import AccountSetting from './Components/AccountSetting'
 // import Editor from './Components/Editor'
